@@ -1,49 +1,52 @@
 # Add Authors here
-johndoe:
-   name: John Doe
-   username: johndoe
-   site: http://johndoe.com
-   avatar: johndoe.png
-   bio: "Hi I a John, a Web Developer and Designer."
-   email: mail@johndoe.com
+pauloaragao:
+   name: Paulo Aragão
+   username: pauloaragao
+   site: https://github.com/
+   avatar: pauloaragao.png
+   bio: "Hi I a Paulo, a DevOps Engineer."
+   email: pauloaragao@live.com
    social:
       - title: "github"
-        url: "https://github.com/johndoe"
+        url: "https://github.com/pauloaragao"
       - title: "linkedin"
-        url: "https://www.linkedin.com/in/johndoe"
+        url: "https://www.linkedin.com/in/pauloaragaoo/"
       - title: "youtube"
-        url: "https://www.youtube.com/channel/UCSfLBFFfNU9r6ihfei6VeJw"
-      - title: "facebook"
-        url: "https://www.facebook.com/johndoe"
-      - title: "twitter"
-        url: "https://www.twitter.com/johndoe"
-      - title: "behance"
-        url: "https://behance.com/johndoe"
+        url: "https://www.youtube.com/channel/UCSWYkEIv1J4az83ZciCmzlQ"
+      #- title: "facebook"
+      #  url: "https://www.facebook.com/johndoe"
+      #- title: "twitter"
+      #  url: "https://www.twitter.com/johndoe"
+      #- title: "behance"
+      #  url: "https://behance.com/johndoe"
       - title: "instagram"
-        url: "https://instagram.com/johndoe"
-      - title: "medium"
-        url: "https://medium.com/johndoe"
-      - title: "telegram"
-        url: "https://telegram.com/johndoe"
-      - title: "dribbble"
-        url: "https://dribbble.com/johndoe"
-      - title: "flickr"
-        url: "https://flickr.com/johndoe"
+        url: "https://instagram.com/pauloaragaoo"
+      #- title: "medium"
+      #  url: "https://medium.com/johndoe"
+      #- title: "telegram"
+      #  url: "https://telegram.com/johndoe"
+      #- title: "dribbble"
+      #  url: "https://dribbble.com/johndoe"
+      #- title: "flickr"
+      #  url: "https://flickr.com/johndoe"
+
+johndoe:
+  avatar: xplor4r.png
 
 xplor4r:
-   name: Sujay kundu
-   username: xplor4r
-   site: https://sujaykundu.com
+#   name: Sujay kundu
+#   username: xplor4r
+#   site: https://sujaykundu.com
    avatar: xplor4r.png
-   bio: "Full Stack Web Developer, based in Bangalore, India"
-   email: mail@sujaykundu.com
-   social:
-      - title: "github"
-        url: "https://github.com/sujaykundu777"
-      - title: "linkedin"
-        url: "https://www.linkedin.com/in/sujaykundu"
-      - title: "youtube"
-        url: "https://www.youtube.com/channel/UCSfLBFFfNU9r6ihfei6VeJw"
-      - title: "facebook"
-        url: "https://www.facebook.com/sujay.kundu2"
+#  bio: "Full Stack Web Developer, based in Bangalore, India"
+#   email: mail@sujaykundu.com
+#   social:
+#      - title: "github"
+#        url: "https://github.com/sujaykundu777"
+#     - title: "linkedin"
+#        url: "https://www.linkedin.com/in/sujaykundu"
+#      - title: "youtube"
+#        url: "https://www.youtube.com/channel/UCSfLBFFfNU9r6ihfei6VeJw"
+#     - title: "facebook"
+#      url: "https://www.facebook.com/sujay.kundu2"
 
