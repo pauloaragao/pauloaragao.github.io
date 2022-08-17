@@ -35,7 +35,7 @@ hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg.
 # Experiences
 author_work_experiences:
             - company_name: Capgemini
-              company_logo: capgemini.png
+              company_logo: 
               company_url: https://www.capgemini.com/br-pt/
               designation: Custom Solutions Architect
               description: Atualmente estou alocado no time de Release Management de Aplicativo (ios e android) de um banco digital com 10 milhões de download em lojas. Atuando principalmente com gerenciamento de pipelines, atuando com melhorias dos scripts atuais focado no CD, gerenciamento das lojas (Apple e Google) e ajudando as squads em disponibilizar os ambientes de teste e aplicativos para teste.
@@ -49,7 +49,7 @@ author_work_experiences:
 
 # Education
 author_education_details:
-              - college_logo: ufs.png
+              - college_logo:
                 college_name: UFS
                 college_url: https://www.ufs.br/
                 college_degree: Engenharia de Computação
