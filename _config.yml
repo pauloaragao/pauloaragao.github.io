@@ -1,7 +1,7 @@
 title: Oxente DevOps
-subtitle: Portifólio de desenvolvimento e documentação.
+#subtitle: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Cheat sheet focado em DevOps e boas práticas de desenvolvimento.
+  printf("Hello World!")
 url: "" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -11,8 +11,8 @@ urls:
       url: /
     - text: About
       url: /about
-    - text: Blog
-      url: /blog
+    #- text: Blog
+    #  url: /blog
     #- text: Gallery
      # url: /gallery
     #- text: Shop
@@ -29,16 +29,17 @@ author_bio: Olá, eu sou Paulo Aragão :D
 author_email: "pauloaragao@live.com"
 author_location: Brazil
 author_website_url: "https://pauloaragao.github.io/#/"
-typewrite-text: Cheat sheet focados em DevOps e boas práticas de desenvolvimento.
+typewrite-text:  printf("Hello World!").
 hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
 author_work_experiences:
-            - company_name: BK Telecom
-              company_logo: bktelecom.png
-              company_url: https://www.bktelecom.com.br
-              designation: DevOps Engineer Jr. 
-              description: Desenvolvendo e gerenciando ambiente para desenvolvimento.
+            - company_name: Capgemini
+              company_logo: capgemini.png
+              company_url: https://www.capgemini.com/br-pt/
+              designation: Custom Solutions Architect
+              description: 
+              Atualmente estou alocado no time de Release Management de Aplicativo (ios e android) de um banco digital com 10 milhões de download em lojas. Atuando principalmente com gerenciamento de pipelines, atuando com melhorias dos scripts atuais focado no CD, gerenciamento das lojas (Apple e Google) e ajudando as squads em disponibilizar os ambientes de teste e aplicativos para teste.
               visibility: true
 #            - company_name: Microsoft
 #              company_logo: microsoft.png
