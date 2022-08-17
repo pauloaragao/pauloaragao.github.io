@@ -1,4 +1,5 @@
-title: Oxente DevOps
+title: Paulo Aragão
+subtitle: Page
 #subtitle: 
 description: >- # this means to ignore newlines until "baseurl:"
   printf("Hello World!")
@@ -7,8 +8,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # Navigation
 urls:
-    - text: Home
-      url: /
+    #- text: Home
+    #  url: /
     - text: About
       url: /about
     #- text: Blog
