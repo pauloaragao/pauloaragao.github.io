@@ -27,7 +27,7 @@ urls:
 author_logo: pauloaragao.png
 author: Paulo Aragão
 author_bio: Olá, eu sou Paulo Aragão :D
-author_email: "pauloaragao@live.com"
+author_email: "eng.pauloaragao@gmail.com"
 author_location: Brazil
 author_website_url: "https://pauloaragao.github.io/#/"
 typewrite-text:  printf("Hello World!").
@@ -37,15 +37,15 @@ hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg.
 author_work_experiences:
             - company_name: Capgemini 
               company_url: https://www.capgemini.com/br-pt/
-              designation: Custom Solutions Architect
-              description: Atualmente estou alocado no time de Release Management de Aplicativo (ios e android) de um banco digital com 10 milhões de download em lojas. Atuando principalmente com gerenciamento de pipelines, atuando com melhorias dos scripts atuais focado no CD, gerenciamento das lojas (Apple e Google) e ajudando as squads em disponibilizar os ambientes de teste e aplicativos para teste.
+              designation: Solutions Architect I
+              description: I am currently allocated to the Application Release Management team (ios and android) of a digital bank with 10 million downloads in stores. Working mainly with pipeline management, working with improvements to current scripts focused on the CD, managing stores (Apple and Google) and helping squads to make test environments and applications available for testing.
               visibility: true
 
 # Education
 author_education_details:
               - college_name: UFS
                 college_url: https://www.ufs.br/
-                college_degree: Engenharia de Computação
+                college_degree: Computer Engineering
                 description: Bacharel
                 visibility: true
 
