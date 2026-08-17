@@ -1,26 +1,37 @@
 import { useState, useEffect } from 'react';
-import { BookOpen, BriefcaseBusiness, Home, Layers3 } from 'lucide-react';
+import {
+  BookOpen,
+  BriefcaseBusiness,
+  GraduationCap,
+  Home,
+  Info,
+  Mail,
+  Moon,
+  ServerCog,
+  Sun,
+  Wrench,
+} from 'lucide-react';
 import { profile } from '../data/portfolio';
 
 const homeLinks = [
-  { href: '#articles', label: 'Artigos', icon: BookOpen },
-  { href: '#artifacts', label: 'Artefatos', icon: Layers3 },
+  { href: '#/content', label: 'Conteúdos', icon: BookOpen },
   { href: '#/portfolio', label: 'Portfólio', icon: BriefcaseBusiness },
 ];
 
 const portfolioLinks = [
   { href: '#/', label: 'Home', icon: Home },
-  { href: '#about', label: 'Sobre' },
-  { href: '#experience', label: 'Experiência' },
-  { href: '#skills', label: 'Habilidades' },
-  { href: '#projects', label: 'Projetos' },
-  { href: '#education', label: 'Formação' },
-  { href: '#contact', label: 'Contato' },
+  { href: '#/content', label: 'Conteúdos', icon: BookOpen },
+  { href: '#about', label: 'Sobre', icon: Info },
+  { href: '#skills', label: 'Habilidades', icon: Wrench },
+  { href: '#experience', label: 'Experiência', icon: ServerCog },
+  { href: '#education', label: 'Formação', icon: GraduationCap },
+  { href: '#contact', label: 'Contato', icon: Mail },
 ];
 
 export default function Navbar({ page }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -28,13 +39,15 @@ export default function Navbar({ page }) {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle('theme-dark', darkMode);
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   return (
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar-inner">
         <a href="#/" className="navbar-brand">
-          <span className="navbar-logo" aria-hidden="true">
-            <img src={profile.avatar} alt="" className="navbar-logo-img" />
-          </span>
           <span className="navbar-brand-name">{profile.name}</span>
         </a>
 
@@ -59,6 +72,16 @@ export default function Navbar({ page }) {
             );
           })}
         </ul>
+
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={() => setDarkMode(value => !value)}
+          aria-label={darkMode ? 'Ativar tema claro' : 'Ativar tema escuro'}
+          title={darkMode ? 'Tema claro' : 'Tema escuro'}
+        >
+          {darkMode ? <Sun size={17} /> : <Moon size={17} />}
+        </button>
       </div>
     </nav>
   );

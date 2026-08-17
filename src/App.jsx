@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import ContentPage from './ContentPage';
 import PortfolioPage from './PortfolioPage';
 import './portfolio.css';
 
 function getPage() {
-  return window.location.hash === '#/portfolio' ? 'portfolio' : 'home';
+  if (window.location.hash === '#/portfolio') return 'portfolio';
+  if (window.location.hash === '#/content') return 'content';
+  return 'home';
 }
 
 function App() {
@@ -22,7 +25,11 @@ function App() {
   return (
     <>
       <Navbar page={page} />
-      <main>{page === 'portfolio' ? <PortfolioPage /> : <Home />}</main>
+      <main>
+        {page === 'portfolio' && <PortfolioPage />}
+        {page === 'content' && <ContentPage />}
+        {page === 'home' && <Home />}
+      </main>
       <footer className="footer">
         <p>© {new Date().getFullYear()} Paulo Aragão — Feito com React</p>
       </footer>

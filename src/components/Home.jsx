@@ -1,99 +1,55 @@
-import { ArrowUpRight, BookOpen, Layers3, Sparkles } from 'lucide-react';
+import { ArrowUpRight, BookOpen, BriefcaseBusiness, Linkedin, Sparkles } from 'lucide-react';
 import { profile } from '../data/portfolio';
-import { architectureArticles, architectureArtifacts } from '../data/architecture';
 
 export default function Home() {
   return (
-    <>
-      <section className="home-hero">
+    <section className="home-hero home-hero--standalone">
         <div className="home-hero-grid" />
-        <div className="container home-hero-content">
-          <p className="home-kicker"><Sparkles size={15} /> Arquitetura em público</p>
-          <h1>Ideias que viram sistemas mais claros, resilientes e humanos.</h1>
+        <div className="container home-hero-layout">
+          <div className="home-hero-content">
+          <p className="home-kicker"><Sparkles size={15} /> Senior Cloud Engineer &amp; Cloud Architect</p>
+          <h1>Arquitetura que transforma complexidade em direção.</h1>
           <p className="home-lead">
-            Artigos, blueprints e decisões de arquitetura sobre cloud, observabilidade e plataformas,
-            compartilhados para provocar boas conversas e registrar trabalho real.
+            Sou {profile.name}, especialista em cloud, observabilidade e plataformas.
+            Este espaço reúne minha trajetória profissional e os conteúdos que estou construindo.
           </p>
           <div className="home-actions">
-            <a href="#articles" className="btn btn-primary">Ler artigos <ArrowUpRight size={17} /></a>
-            <a href="#/portfolio" className="btn btn-outline">Conhecer o portfólio</a>
+            <a href="#/portfolio" className="btn btn-primary">
+              <BriefcaseBusiness size={17} /> Ver portfólio <ArrowUpRight size={17} />
+            </a>
+            <a href="#/content" className="btn btn-outline">
+              <BookOpen size={17} /> Conteúdos
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+              <Linkedin size={17} /> LinkedIn
+            </a>
           </div>
           <div className="home-proof-row" aria-label="Áreas de atuação">
             <span>Cloud architecture</span>
             <span>Platform engineering</span>
             <span>Observability</span>
           </div>
-        </div>
-      </section>
+          </div>
 
-      <section id="articles" className="home-section">
-        <div className="container">
-          <div className="home-section-heading">
-            <div>
-              <p className="home-kicker"><BookOpen size={15} /> Leituras</p>
-              <h2>Artigos para compartilhar contexto</h2>
+          <aside className="architecture-signal" aria-label="Áreas de atuação">
+            <div className="signal-heading">
+              <span className="signal-dot" />
+              <span>Architecture practice</span>
+              <span className="signal-status">ACTIVE</span>
             </div>
-            <p>Notas curtas para transformar experiência operacional em repertório útil.</p>
-          </div>
-          <div className="article-grid">
-            {architectureArticles.map(article => (
-              <article key={article.id} className="article-card">
-                <div className="content-card-topline">
-                  <span className="content-type">{article.category}</span>
-                  <span className="content-read-time">{article.readTime}</span>
-                </div>
-                <h3>{article.title}</h3>
-                <p>{article.excerpt}</p>
-                <div className="tag-row">
-                  {article.topics.map(topic => <span key={topic}>{topic}</span>)}
-                </div>
-                <button className="text-action" type="button" aria-label={`Artigo ${article.title} em breve`}>
-                  Em breve <ArrowUpRight size={16} />
-                </button>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="artifacts" className="home-section home-section-dark">
-        <div className="container">
-          <div className="home-section-heading">
-            <div>
-              <p className="home-kicker"><Layers3 size={15} /> Artefatos</p>
-              <h2>Arquiteturas feitas para sair do quadro</h2>
+            <div className="signal-diagram" aria-hidden="true">
+              <span className="diagram-node diagram-node--top">STRATEGY</span>
+              <span className="diagram-node diagram-node--left">PLATFORM</span>
+              <span className="diagram-node diagram-node--right">OBSERVABILITY</span>
+              <span className="diagram-node diagram-node--middle">ARCHITECTURE</span>
+              <span className="diagram-node diagram-node--center">VALUE</span>
+              <span className="diagram-line diagram-line--top" />
+              <span className="diagram-line diagram-line--left" />
+              <span className="diagram-line diagram-line--right" />
+              <span className="diagram-line diagram-line--bottom" />
             </div>
-            <p>Modelos visuais e decisões estruturadas para comunicar, construir e evoluir.</p>
-          </div>
-          <div className="artifact-grid">
-            {architectureArtifacts.map(artifact => (
-              <article key={artifact.id} className="artifact-card">
-                <div className="artifact-index">0{architectureArtifacts.indexOf(artifact) + 1}</div>
-                <div>
-                  <span className="content-type">{artifact.category}</span>
-                  <h3>{artifact.title}</h3>
-                  <p>{artifact.description}</p>
-                  <strong>{artifact.outcome}</strong>
-                  <div className="tag-row">
-                    {artifact.stack.map(item => <span key={item}>{item}</span>)}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          </aside>
         </div>
       </section>
-
-      <section className="home-bridge">
-        <div className="container home-bridge-inner">
-          <div>
-            <p className="home-kicker">Do conceito à execução</p>
-            <h2>Veja o contexto por trás das ideias.</h2>
-            <p>Experiência, projetos e formação reunidos em uma página para consulta rápida.</p>
-          </div>
-          <a href="#/portfolio" className="btn btn-primary">Abrir portfólio de {profile.name.split(' ')[0]} <ArrowUpRight size={17} /></a>
-        </div>
-      </section>
-    </>
   );
 }
