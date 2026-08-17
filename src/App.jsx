@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ContentPage from './ContentPage';
+import { PegaObservabilityArtifactPage } from './artifacts/pega';
 import PortfolioPage from './PortfolioPage';
 import './portfolio.css';
 
 function getPage() {
+  if (window.location.hash === '#/artifact/observability-stream-log-bizdevops') return 'artifact';
   if (window.location.hash === '#/portfolio') return 'portfolio';
   if (window.location.hash === '#/content') return 'content';
   return 'home';
@@ -28,6 +30,7 @@ function App() {
       <main>
         {page === 'portfolio' && <PortfolioPage />}
         {page === 'content' && <ContentPage />}
+        {page === 'artifact' && <PegaObservabilityArtifactPage />}
         {page === 'home' && <Home />}
       </main>
       <footer className="footer">

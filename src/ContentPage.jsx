@@ -1,6 +1,7 @@
 import { ArrowUpRight, BookOpen, ChevronDown, Layers3, Sparkles } from 'lucide-react';
 import Projects from './components/Projects';
-import { architectureArticles, architectureArtifacts } from './data/architecture';
+import { architectureArticles } from './data/architecture';
+import { pegaArtifacts } from './artifacts/pega';
 
 export default function ContentPage() {
   return (
@@ -57,12 +58,12 @@ export default function ContentPage() {
           <div className="home-section-heading">
             <div>
               <p className="home-kicker"><Layers3 size={15} /> Artefatos</p>
-              <h2>Arquiteturas feitas para sair do quadro</h2>
+              <h2>Arquiteturas prontas para orientar decisões</h2>
             </div>
-            <p>Modelos visuais e decisões estruturadas para comunicar, construir e evoluir.</p>
+            <p>Desenhos visuais e decisões estruturadas para comunicar, construir e evoluir.</p>
           </div>
           <div className="artifact-grid">
-            {architectureArtifacts.map((artifact, index) => (
+            {pegaArtifacts.map((artifact, index) => (
               <article key={artifact.id} className="artifact-card">
                 <div className="artifact-index">0{index + 1}</div>
                 <div>
@@ -73,6 +74,7 @@ export default function ContentPage() {
                   <div className="tag-row">
                     {artifact.stack.map(item => <span key={item}>{item}</span>)}
                   </div>
+                  <a className="text-action" href={`#/artifact/${artifact.id}`}>Abrir artefato <ArrowUpRight size={16} /></a>
                 </div>
               </article>
             ))}
