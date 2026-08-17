@@ -1,26 +1,28 @@
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import PortfolioPage from './PortfolioPage';
 import './portfolio.css';
 
+function getPage() {
+  return window.location.hash === '#/portfolio' ? 'portfolio' : 'home';
+}
+
 function App() {
+  const [page, setPage] = useState(getPage);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (window.location.hash.startsWith('#/')) setPage(getPage());
+    };
+    window.addEventListener('hashchange', handleRouteChange);
+    return () => window.removeEventListener('hashchange', handleRouteChange);
+  }, []);
+
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
+      <Navbar page={page} />
+      <main>{page === 'portfolio' ? <PortfolioPage /> : <Home />}</main>
       <footer className="footer">
         <p>© {new Date().getFullYear()} Paulo Aragão — Feito com React</p>
       </footer>

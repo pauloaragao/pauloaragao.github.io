@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
+import { BookOpen, BriefcaseBusiness, Home, Layers3 } from 'lucide-react';
 import { profile } from '../data/portfolio';
 
-const links = [
-  { href: '#home', label: 'Início' },
+const homeLinks = [
+  { href: '#articles', label: 'Artigos', icon: BookOpen },
+  { href: '#artifacts', label: 'Artefatos', icon: Layers3 },
+  { href: '#/portfolio', label: 'Portfólio', icon: BriefcaseBusiness },
+];
+
+const portfolioLinks = [
+  { href: '#/', label: 'Home', icon: Home },
   { href: '#about', label: 'Sobre' },
   { href: '#experience', label: 'Experiência' },
   { href: '#skills', label: 'Habilidades' },
@@ -11,7 +18,7 @@ const links = [
   { href: '#contact', label: 'Contato' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ page }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,7 +31,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#home" className="navbar-brand">
+        <a href="#/" className="navbar-brand">
           <span className="navbar-logo" aria-hidden="true">
             <img src={profile.avatar} alt="" className="navbar-logo-img" />
           </span>
@@ -40,11 +47,17 @@ export default function Navbar() {
         </button>
 
         <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
-          {links.map(link => (
+          {(page === 'portfolio' ? portfolioLinks : homeLinks).map(link => {
+            const Icon = link.icon;
+            return (
             <li key={link.href}>
-              <a href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
+              <a href={link.href} onClick={() => setMenuOpen(false)}>
+                {Icon && <Icon size={15} />}
+                {link.label}
+              </a>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </div>
     </nav>

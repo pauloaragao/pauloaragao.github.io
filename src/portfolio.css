@@ -110,6 +110,9 @@ ul { list-style: none; }
   color: var(--c-text-muted);
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   transition: color var(--transition), background var(--transition);
 }
 .navbar-links a:hover {
@@ -367,6 +370,27 @@ ul { list-style: none; }
   background: linear-gradient(90deg, var(--c-accent), transparent);
   border-radius: 2px;
   margin-top: 6px;
+}
+
+.experience-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+.experience-toggle:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.experience-toggle .exp-chevron {
+  margin-top: 0.35rem;
 }
 
 /* ─── About ─── */
@@ -822,6 +846,122 @@ ul { list-style: none; }
   font-size: 0.82rem;
 }
 
+/* ─── Architecture home ─── */
+.home-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 0 5rem;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 0%, rgba(88, 166, 255, 0.18), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 5% 80%, rgba(63, 185, 80, 0.08), transparent 70%);
+}
+
+.home-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(88, 166, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 166, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.home-hero-content,
+.home-section,
+.home-bridge { position: relative; z-index: 1; }
+
+.home-hero-content { max-width: 900px; }
+.home-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--c-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.home-hero h1 {
+  max-width: 780px;
+  margin: 1.25rem 0;
+  color: #e6edf3;
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+.home-lead {
+  max-width: 650px;
+  color: var(--c-text-muted);
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+.home-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.home-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  color: var(--c-text-muted);
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+.home-proof-row span::before { content: '/'; color: var(--c-accent); margin-right: 0.45rem; }
+
+.home-section { padding: 6rem 0; }
+.home-section-dark { background: var(--c-surface); }
+.home-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.home-section-heading h2,
+.home-bridge h2 {
+  max-width: 560px;
+  margin-top: 0.65rem;
+  color: #e6edf3;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+.home-section-heading > p { max-width: 310px; color: var(--c-text-muted); }
+.article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.article-card,
+.artifact-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface2);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.article-card:hover,
+.artifact-card:hover {
+  border-color: var(--c-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.article-card { padding: 1.75rem; min-height: 290px; display: flex; flex-direction: column; }
+.content-card-topline { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.content-type { color: var(--c-accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.content-read-time { color: var(--c-text-muted); font-size: 0.75rem; }
+.article-card h3, .artifact-card h3 { color: #e6edf3; font-size: 1.35rem; line-height: 1.2; }
+.article-card p, .artifact-card p { color: var(--c-text-muted); line-height: 1.65; margin-top: 0.75rem; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+.tag-row span { color: var(--c-text-muted); border: 1px solid var(--c-border); border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.7rem; }
+.text-action { display: inline-flex; align-items: center; gap: 0.3rem; width: fit-content; margin-top: auto; padding-top: 1.75rem; border: 0; background: none; color: var(--c-accent); cursor: pointer; font: inherit; }
+.artifact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.artifact-card { display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 1.5rem; }
+.artifact-index { color: var(--c-accent); font: 700 0.8rem 'JetBrains Mono', 'Fira Code', monospace; }
+.artifact-card strong { display: block; margin-top: 1.35rem; color: #e6edf3; font-size: 0.85rem; }
+.home-bridge { padding: 5rem 0; background: linear-gradient(115deg, var(--c-accent-dim), transparent 55%); border-top: 1px solid var(--c-border); }
+.home-bridge-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.home-bridge h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
+.home-bridge p:not(.home-kicker) { max-width: 500px; margin-top: 0.75rem; color: var(--c-text-muted); }
+
 /* ─── Contact ─── */
 .contact-container { text-align: center; }
 
@@ -889,4 +1029,13 @@ ul { list-style: none; }
   .timeline-card { padding: 1rem; }
 
   .skills-grid { grid-template-columns: 1fr; }
+
+  .home-hero { min-height: 85vh; padding: 7rem 0 3rem; }
+  .home-hero h1 { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .home-section { padding: 4rem 0; }
+  .home-section-heading,
+  .home-bridge-inner { align-items: flex-start; flex-direction: column; gap: 1.25rem; }
+  .article-grid,
+  .artifact-grid { grid-template-columns: 1fr; }
+  .home-proof-row { margin-top: 2.5rem; gap: 0.75rem 1.25rem; }
 }
